@@ -3,25 +3,25 @@ import psycopg2
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# ===============================
+
 # เตรียมโฟลเดอร์ images
-# ===============================
+
 os.makedirs("images", exist_ok=True)
 
-# ===============================
+
 # เชื่อมต่อ PostgreSQL
-# ===============================
+
 conn = psycopg2.connect(
-    dbname="movie_analytics",   # 👈 แก้ให้ตรงกับ DB ของน้อง
-    user="postgres",            # 👈 user ของน้อง
-    password="123456",        # 👈 password ของน้อง
+    dbname="movie_analytics",   
+    user="postgres",            
+    password="123456",        
     host="localhost",
     port="5432"
 )
 
-# ===============================
+
 # 1) Average Rating by Year
-# ===============================
+
 query1 = """
 SELECT m.release_year, ROUND(AVG(r.rating), 2) AS avg_rating
 FROM ratings r
@@ -41,9 +41,9 @@ plt.grid(True)
 plt.savefig("images/dashboard_ratings_by_year.png")
 plt.close()
 
-# ===============================
+
 # 2) Top 10 Movies by Rating
-# ===============================
+
 query2 = """
 SELECT m.title, ROUND(AVG(r.rating),2) AS avg_rating, COUNT(r.rating) AS total_reviews
 FROM ratings r
@@ -64,9 +64,9 @@ plt.xlabel("Average Rating")
 plt.savefig("images/dashboard_top_movies.png")
 plt.close()
 
-# ===============================
+
 # 3) Ratings by Gender
-# ===============================
+
 query3 = """
 SELECT u.gender, ROUND(AVG(r.rating),2) AS avg_rating
 FROM ratings r
@@ -83,14 +83,4 @@ plt.ylabel("Average Rating")
 plt.savefig("images/dashboard_ratings_by_gender.png")
 plt.close()
 
-## 📊 Dashboard
-
-### Average Rating by Year
-![Ratings by Year](images/dashboard_ratings_by_year.png)
-
-### Top 10 Movies
-![Top Movies](images/dashboard_top_movies.png)
-
-### Ratings by Gender
-![Ratings by Gender](images/dashboard_ratings_by_gender.png)
 
