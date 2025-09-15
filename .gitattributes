@@ -1,2 +1,38 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# กำหนดให้ใช้ LF (Line Feed) เป็นค่า default
+* text=auto eol=lf
+
+# จัดการไฟล์ Python
+*.py text diff=python
+
+# Jupyter Notebook
+*.ipynb text
+
+# Config files
+*.yml text
+*.yaml text
+*.toml text
+*.json text
+*.env text
+
+# Documentation
+*.md text
+*.txt text
+
+# CSV / Data
+*.csv text
+*.tsv text
+
+# Images และ Binary files ไม่ต้องแก้ไข EOL
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.svg binary
+
+# Executables / archives
+*.exe binary
+*.zip binary
+*.tar binary
+*.gz binary
+*.7z binary
+

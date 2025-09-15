@@ -2,5 +2,21 @@ psycopg2-binary==2.9.9
 pandas==2.2.2
 matplotlib==3.9.2
 streamlit==1.37.1
-streamlit
+# Backend
+fastapi
+uvicorn
+pymongo
+
+# Data & ML
+pandas
 scikit-learn
+
+# Dashboard & Visualization
+streamlit
+plotly
+matplotlib
+wordcloud
+
+# HTTP Request
+requests
+
