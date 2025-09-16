@@ -15,7 +15,7 @@ users = pd.read_csv(
     encoding="latin-1"
 )
 
-# เพิ่ม field เสริมเพื่อความสมจริง
+# เพิ่ม field 
 users["name"] = "User" + users["user_id"].astype(str)
 users["email"] = users["name"].str.lower() + "@example.com"
 users["join_date"] = pd.Timestamp.today().strftime("%Y-%m-%d")

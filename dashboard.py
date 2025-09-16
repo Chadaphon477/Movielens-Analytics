@@ -24,7 +24,7 @@ GENRE_MAP = {
 }
 
 def normalize_genre(val) -> str:
-    """แปลงค่า genre_8 หรือ 8 ให้เป็นชื่อประเภทหนัง"""
+    """แปลงค่า genre ให้เป็นชื่อประเภทหนัง"""
     if pd.isna(val):
         return "ไม่ระบุ"
     s = str(val).strip()

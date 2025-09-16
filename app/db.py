@@ -12,7 +12,7 @@ movies_collection = db["movies"]
 ratings_collection = db["ratings"]
 users_collection = db["users"]
 
-# ✅ Debug log (รันเฉพาะเวลาทดสอบไฟล์นี้โดยตรง)
+# ✅ Debug log
 if __name__ == "__main__":
     print("✅ Connected to MongoDB Atlas")
     print("Database:", db.name)
